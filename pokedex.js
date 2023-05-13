@@ -61,7 +61,7 @@ async function showPage(currentPageNum){
    var numOfBtnPerPage = 5;
 
    var totalPages = Math.ceil(pokemonData.length / numPerPage); 
-
+  
    if(currentPageNum< 1){
       currentPageNum = 1
     } else if(currentPageNum>totalPages){
@@ -90,15 +90,30 @@ async function showPage(currentPageNum){
       );
    }
    $("#pagination").empty();
+
+   if(currentPageNum > 1){
+    $("#pagination").append(` <button type ="button" class="btn btn-primary pageBtn" id = "prevPage" 
+    pageNum = "${currentPageNum-1}">Prev</button> `)
+   }
+   
     console.log("T: " + totalPages);
-    
+    console.log("S: " + startBtnNum);
+    console.log("E: " + endBtnNum);
     for(let i = startBtnNum; i <= endBtnNum; i++){
       var active = "";
       if(i == currentPageNum){
          active = "active";
       } 
-      $("#pagination").append(`<button type="button" class="btn btn-primary pageBtn ${active}" id = "${i}" pageNum = "${i}">${i}</button>`);
+      if(i<=totalPages){
+        $("#pagination").append(`<button type="button" class="btn btn-primary pageBtn ${active}" id = "${i}" pageNum = "${i}">${i}</button>`);
+      }
+      
      
+    }
+
+    if(currentPageNum < totalPages){
+      $("#pagination").append(` <button type ="button" class="btn btn-primary pageBtn" id = "nextPage" 
+      pageNum = "${currentPageNum+1}">Next</button>`)
     }
 };
 
