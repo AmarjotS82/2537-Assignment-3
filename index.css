@@ -32,6 +32,12 @@
   border-color: rgb(182, 65, 65);
 }
 
-.btn:p{
-  background-color: rgb(182, 65, 65);
+#pokeTypesFilter label{
+  font-size: 28px;
+  margin-right: 10px;
+  
 }
+
+
+
+
