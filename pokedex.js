@@ -201,34 +201,9 @@ async function showPage(currentPageNum,filterTypes){
         thisPokemon = innerResponse.data;
       }
       
-     // console.log("iR: " + pokemonData[i].url);
-      // if(filterTypes.length == 2 && !(filterTypes.includes(thisPokemon.types[0].type.name) && filterTypes.includes(thisPokemon.types[1].type.name)) ){
-      //   console.log("pt: " + thisPokemon.types[0].type.name +","+ thisPokemon.types[0].type.name +" " + thisPokemon.name);
-      //   pokemonData.shift();
-      // }
-     // console.log("index: " + thisPokemon.id);
-   //  console.log("typArr: " + filterTypes);
-    // console.log("Pktyp: " +  thisPokemon.types.map((pokemon) => pokemon.type.name));
-    // const typecombo2 = [];
-    //  let type = thisPokemon.types.map((pokemon) => pokemon.type.name);
-    //  if(filterTypes.length == 2){
-    //    typecombo2[0] = filterTypes[1];
-    //    typecombo2[1] = filterTypes[0];
-    //  }
-    // console.log("t2: " + typecombo2.toString());
-    // console.log(type);
-    // console.log(type.toString());
-    // console.log("TypM: " + filterTypes.includes(type.toString()));
 
-    //  console.log("lTy: " + filterTypes);
-    //  console.log("OPktypes: ", type.toString());
-    //  console.log("OMatch: " + filterTypes.includes(type.toString()));
-    //  console.log("Name: " + thisPokemon.name);
-     //type.toString().includes(filterTypes.toString()) || type.toString().includes(typecombo2.toString())
         if(filterTypes.length == 2  ){
-          // console.log("filttypes: ", filterTypes);
-          //  console.log("Pktypes: ", type);
-          //  console.log("Match: " + filterTypes.toString().includes(type.toString()));
+
           console.log("2Name: " + pokemonData);
           if(thisPokemon.id < 810){
             $("#pokemon").append(`
